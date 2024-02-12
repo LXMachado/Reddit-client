@@ -1,0 +1,29 @@
+.App {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.top-section {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.text-link,
+.text-link.a {
+    text-decoration: none;
+    color: black;
+}
+
+
+img {
+    max-width: 100%
+}
+
+@media (max-width: 600px) {
+    
+    .top-section>* {
+        width: 100%;
+    }
+
+}

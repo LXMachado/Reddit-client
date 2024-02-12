@@ -1,0 +1,25 @@
+.favorites-container {
+    padding: 2%;
+    border-radius: 0.5em;
+    
+
+}
+
+.list-item-button {
+    margin-bottom: 1%;
+    border-radius: 0.5em;
+}
+
+.avatar {
+    width: 0.5em;
+    height: 0.5em;
+    margin: 2%;
+   
+
+}
+
+.link {
+    text-decoration: none;
+    color: #333;
+
+}

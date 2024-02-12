@@ -1,0 +1,29 @@
+.search-bar-container {
+    padding: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 4em;
+    height: 4em;
+    color: red;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff0000;
+    margin-left: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+}
+
+.form {
+    margin-bottom: 2%;
+}
