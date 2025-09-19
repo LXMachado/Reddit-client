@@ -54,6 +54,24 @@ const initialState = {
   error: null,
 };
 
+// Define an async thunk to fetch subreddit data
+export const getFavorites = createAsyncThunk(
+  "favorites/getFavorites",
+  async (favorite, thunkAPI) => {
+    try {
+      const subreddit = favorite.subreddit;
+      const response = await fetch(`https://www.reddit.com/r/${subreddit}/.json`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 // Create a slice
 export const favoritesSlice = createSlice({
   name: "favorites",
@@ -75,24 +93,6 @@ export const favoritesSlice = createSlice({
       });
   },
 });
-
-// Define an async thunk to fetch subreddit data
-export const getFavorites = createAsyncThunk(
-  "favorites/getFavorites",
-  async (favorite, thunkAPI) => {
-    try {
-      const subreddit = favorite.subreddit;
-      const response = await fetch(`https://www.reddit.com/r/${subreddit}/.json`);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
 
 // Export the async thunk for use in your components
 export const selectFavorites = (state) => state.favorites.favorites;
