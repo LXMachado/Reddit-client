@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import {
   kformatter,
   previewText,
@@ -50,10 +51,10 @@ export default function Listing(props) {
   return (
     <Paper className="listing">
       <aside>
-        <FontAwesomeIcon icon="chevron-up" size="2x" className="chevron-up" />
+        <FontAwesomeIcon icon={faChevronUp} size="2x" className="chevron-up" />
         <span>{kformatter(score)}</span>
         <FontAwesomeIcon
-          icon="chevron-down"
+          icon={faChevronDown}
           size="2x"
           className="chevron-down"
         />
