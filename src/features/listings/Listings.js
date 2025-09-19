@@ -30,7 +30,7 @@ export default function Listings() {
   }, [subreddit, dispatch, search]);
 
   if (loading) {
-    return <Loading />;
+    return <Loading loading={loading} />;
   }
 
   return (
