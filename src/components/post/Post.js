@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { gfm } from "remark-gfm";
+import remarkGfm from "remark-gfm";
 import { kformatter, utcTimeConverter } from "../../app/helpers/helpers";
 import { useSelector } from "react-redux";
 import Typography from "@mui/material/Typography";
@@ -43,7 +43,7 @@ export default function POST() {
         <a href={url_overridden_by_dest}>{url_overridden_by_dest}</a>
       </Typography>
 
-      <ReactMarkdown remarkPlugins={gfm} children={selftext} />
+      <ReactMarkdown remarkPlugins={[remarkGfm]} children={selftext} />
     </Container>
   );
 }
