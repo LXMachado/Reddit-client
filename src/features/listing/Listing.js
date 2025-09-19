@@ -7,7 +7,7 @@ import {
   utcTimeConverter,
 } from "../../app/helpers/helpers";
 import ReactMarkdown from "react-markdown";
-import { gfm } from "remark-gfm";
+import remarkGfm from "remark-gfm";
 import { Button, Paper } from "@material-ui/core";
 import CommentIcon from "@material-ui/icons/Comment";
 import ShareIcon from "@material-ui/icons/Share";
@@ -43,7 +43,7 @@ export default function Listing(props) {
   const preview = (
     <ReactMarkdown
       disallowedElements={["a"]}
-      remarkPlugins={gfm}
+      remarkPlugins={[remarkGfm]}
       children={previewText(selftext, 500)}
     />
   );
@@ -75,7 +75,7 @@ export default function Listing(props) {
 
         <main>
           <h1>{title}</h1>
-          <ReactMarkdown remarkPlugins={gfm} children={body} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]} children={body} />
 
           {selftext && preview}
 
@@ -83,7 +83,7 @@ export default function Listing(props) {
         </main>
 
         <footer>
-          <ReactMarkdown remarkPlugins={gfm} children={body} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]} children={body} />
           <Button
             endIcon={<CommentIcon />}
             variant="contained"
