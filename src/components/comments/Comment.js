@@ -1,7 +1,7 @@
 import React from "react";
 import { utcTimeConverter, kformatter } from "../../app/helpers/helpers";
 import ReactMarkdown from "react-markdown";
-import { gfm } from "remark-gfm";
+import remarkGfm from "remark-gfm";
 import { Button, Container } from "@material-ui/core";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 
@@ -17,7 +17,7 @@ export default function Comment(props) {
         </header>
 
         <main>
-          <ReactMarkdown remarkPlugins={gfm} children={body} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]} children={body} />
         </main>
 
         <footer>
